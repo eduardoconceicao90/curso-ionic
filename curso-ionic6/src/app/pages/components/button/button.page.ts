@@ -12,4 +12,8 @@ export class ButtonPage implements OnInit {
   ngOnInit() {
   }
 
+  enviar(){
+    alert('Enviou!')
+  }
+
 }

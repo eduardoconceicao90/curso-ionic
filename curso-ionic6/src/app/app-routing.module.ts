@@ -23,6 +23,10 @@ const routes: Routes = [
     path: 'alert',
     loadChildren: () => import('./pages/components/alert/alert.module').then( m => m.AlertPageModule)
   },
+  {
+    path: 'accordion',
+    loadChildren: () => import('./pages/components/accordion/accordion.module').then( m => m.AccordionPageModule)
+  },
   
 ];
 

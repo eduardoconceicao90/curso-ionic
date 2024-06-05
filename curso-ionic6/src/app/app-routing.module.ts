@@ -15,6 +15,10 @@ const routes: Routes = [
     path: 'button',
     loadChildren: () => import('./pages/components/button/button.module').then( m => m.ButtonPageModule)
   },
+  {
+    path: 'card',
+    loadChildren: () => import('./pages/components/card/card.module').then( m => m.CardPageModule)
+  },
   
 ];
 

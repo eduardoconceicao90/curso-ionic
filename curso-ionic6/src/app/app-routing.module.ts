@@ -31,6 +31,14 @@ const routes: Routes = [
     path: 'actionsheet',
     loadChildren: () => import('./pages/components/actionsheet/actionsheet.module').then( m => m.ActionsheetPageModule)
   },
+  {
+    path: 'tags',
+    loadChildren: () => import('./pages/components/tags/tags.module').then( m => m.TagsPageModule)
+  },
+  {
+    path: 'js',
+    loadChildren: () => import('./pages/components/js/js.module').then( m => m.JsPageModule)
+  },
   
 ];
 

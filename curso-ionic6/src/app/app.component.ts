@@ -13,6 +13,8 @@ export class AppComponent {
     { title: 'Alert', url: 'alert', icon: 'dice' },
     { title: 'Button', url: 'button', icon: 'dice' },
     { title: 'Card', url: 'card', icon: 'dice' },
+    { title: 'Components-Tags', url: 'tags', icon: 'dice' },
+    { title: 'Components-JS', url: 'js', icon: 'dice' },
   ];
   
 

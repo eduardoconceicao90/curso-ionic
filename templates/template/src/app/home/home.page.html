@@ -1,0 +1,13 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title>
+      Meu primeiro app
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <h2>Aqui vem o conteúdo</h2>
+  {{ mensagem }} <br>
+  <ion-button (click)="mudarMensagemAoClicar()">Mudar Mensagem</ion-button>
+</ion-content>

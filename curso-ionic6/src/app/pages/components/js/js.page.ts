@@ -12,4 +12,13 @@ export class JsPage implements OnInit {
   ngOnInit() {
   }
 
+  atualizar(event: any) {
+    console.log('Usuário solicitou a atualização');
+
+    setTimeout(() => {
+      console.log('Lista atualizada com sucesso! ')
+      event.target.complete();
+    }, 2000);
+  }
+
 }

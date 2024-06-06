@@ -1,0 +1,60 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Datetime</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-datetime></ion-datetime>
+  ------------------------------ 01
+  <ion-datetime value="2022-04-21T00:00:00" min="2022-03-01T00:00:00" max="2022-05-31T23:59:59"></ion-datetime>
+  ------------------------------ 02
+  <ion-datetime minuteValues="0,15,30,45" dayValues="5,10,15,20,25,30"></ion-datetime>
+  ------------------------------ 03
+  <ion-datetime [isDateEnabled]="isWeekday"></ion-datetime>
+  ------------------------------ 04
+  <ion-datetime locale="pt-BR"></ion-datetime>
+  ------------------------------ 05
+  <ion-datetime locale="en-GB" hourCycle="h12"></ion-datetime>
+  ------------------------------ 06
+  <ion-datetime [firstDayOfWeek]="1"></ion-datetime>
+  ------------------------------ 07
+  <ion-datetime locale="es-ES">
+    <span slot="time-label">Tiempo</span>
+  </ion-datetime>
+  ------------------------------ 08
+  <ion-datetime locale="en-GB-u-hc-h12"></ion-datetime>
+  ------------------------------ 09
+  <ion-datetime presentation="month-year"></ion-datetime>
+  ------------------------------ 10
+  <ion-datetime presentation="time"></ion-datetime>
+  ------------------------------ 11
+  <ion-datetime presentation="date"></ion-datetime>
+  ------------------------------ 12
+  <ion-datetime presentation="date-time" [preferWheel]="true"></ion-datetime>
+  ------------------------------ 13
+  <ion-datetime presentation="date" [multiple]="true" [value]="['2022-06-03', '2022-06-13', '2022-06-29']"></ion-datetime>
+  ------------------------------ 14
+  <ion-datetime [showDefaultTitle]="true"></ion-datetime>
+  ------------------------------ 15
+  <ion-datetime>
+    <span slot="title">Select a Reservation Date</span>
+  </ion-datetime>
+  ------------------------------ 16
+  <ion-datetime [showDefaultButtons]="true"></ion-datetime>
+  ------------------------------ 17
+  <ion-datetime [showDefaultButtons]="true" doneText="All set" cancelText="Never mind"> </ion-datetime>
+  ------------------------------ 18
+  <ion-datetime #datetime>
+    <ion-buttons slot="buttons">
+      <ion-button color="danger" (click)="datetime.reset()">Reset</ion-button>
+      <ion-button color="primary" (click)="datetime.cancel()">Never mind</ion-button>
+      <ion-button color="primary" (click)="datetime.confirm()">All Set</ion-button>
+    </ion-buttons>
+  </ion-datetime>
+  ------------------------------ 19
+  <ion-datetime presentation="date" value="2023-01-01" [highlightedDates]="highlightedDates"></ion-datetime>
+</ion-content>

@@ -43,6 +43,10 @@ const routes: Routes = [
     path: 'datetime',
     loadChildren: () => import('./pages/components/datetime/datetime.module').then( m => m.DatetimePageModule)
   },
+  {
+    path: 'camera',
+    loadChildren: () => import('./pages/natives/camera/camera.module').then( m => m.CameraPageModule)
+  },
   
 ];
 

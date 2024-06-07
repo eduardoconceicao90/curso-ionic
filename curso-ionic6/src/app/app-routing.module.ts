@@ -47,6 +47,10 @@ const routes: Routes = [
     path: 'camera',
     loadChildren: () => import('./pages/natives/camera/camera.module').then( m => m.CameraPageModule)
   },
+  {
+    path: 'flash',
+    loadChildren: () => import('./pages/natives/flash/flash.module').then( m => m.FlashPageModule)
+  },
   
 ];
 

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AlertController } from '@ionic/angular';
+import { ActionSheetController, AlertController } from '@ionic/angular';
 import { TarefaService } from 'src/app/services/tarefa.service';
 
 @Component({
@@ -12,7 +12,8 @@ export class HomePage {
   tarefaCollection: any[] = [];
 
   constructor(private alertCtrl: AlertController,
-              private tarefaService: TarefaService
+              private tarefaService: TarefaService,
+              private actionSheetCtrl : ActionSheetController
   ) {}
 
   ionViewDidEnter() {
@@ -59,5 +60,30 @@ export class HomePage {
     this.tarefaService.delete(item, () => {
       this.listarTarefa();
     });
+  }
+
+  async openActions(tarefa: any) {
+    const actionSheet = await this.actionSheetCtrl.create({
+      header: "O QUE DESEJA FAZER?",
+      buttons: [{
+        text: tarefa.feito ? 'Colocar como pendente' : 'Marcar como realizado',
+        icon: tarefa.feito ? 'close-outline' : 'checkmark-circle',
+        handler: () => {
+          tarefa.feito = !tarefa.feito;
+          this.tarefaService.atualizar(tarefa, ()=>{
+            this.listarTarefa();
+          })
+        }
+      }, {
+        text: 'Cancelar',
+        icon: 'close',
+        role: 'cancel',
+        handler: () => {
+          console.log('Cancel clicked');
+        }
+      }]
+    });
+
+    await actionSheet.present();
   }
 }

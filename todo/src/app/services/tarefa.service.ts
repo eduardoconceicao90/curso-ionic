@@ -59,4 +59,27 @@ export class TarefaService {
     }
   }
 
+  atualizar(tarefa : any, callback: (() => void) | null = null){
+    //Obter do localStorage
+    let value = localStorage.getItem(this.key);
+
+    if (value == null || value == undefined){
+      return;
+    } else{
+      let collection: any[] = JSON.parse(value);
+      
+      collection.forEach(item => {
+        if (item.tarefa == tarefa.tarefa){
+          item.feito = tarefa.feito;
+        }
+      });
+
+      localStorage.setItem(this.key, JSON.stringify(collection));
+    }
+
+    if (callback!=null){
+      callback();
+    }
+  }
+
 }

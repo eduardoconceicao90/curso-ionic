@@ -10,6 +10,8 @@ export class TarefaService {
 
   constructor() { }
 
+  
+
   salvar(tarefa: any, callback: (() => void) | null = null){
     tarefa.feito = false;
 
@@ -28,6 +30,18 @@ export class TarefaService {
     if (callback != null){
       callback();
     }
+  }
+
+  listar(){
+    //Obter do localStorage
+    let value = localStorage.getItem(this.key);
+    
+    if (value == null || value == undefined){
+      return [];
+    }
+
+    let collection: any[] = JSON.parse(value);
+    return collection;
   }
 
 }

@@ -9,9 +9,19 @@ import { TarefaService } from 'src/app/services/tarefa.service';
 })
 export class HomePage {
 
+  tarefaCollection: any[] = [];
+
   constructor(private alertCtrl: AlertController,
               private tarefaService: TarefaService
   ) {}
+
+  ionViewDidEnter() {
+    this.listarTarefa();
+  }
+
+  listarTarefa() {
+    this.tarefaCollection = this.tarefaService.listar();
+  }
 
   async  showAdd() {
     const alert = await this.alertCtrl.create({
@@ -34,7 +44,9 @@ export class HomePage {
         }, {
           text: 'Salvar',
           handler: (tarefa) => {
-           this.tarefaService.salvar(tarefa);
+            this.tarefaService.salvar(tarefa, () => {
+              this.listarTarefa();
+            });
           }
         }
       ]

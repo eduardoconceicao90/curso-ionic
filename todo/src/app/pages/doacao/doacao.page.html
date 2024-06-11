@@ -1,0 +1,27 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title class="animate__animated animate__bounceInRight">
+      Doação
+    </ion-title>
+    <ion-buttons slot="primary" slot="start">
+      <ion-back-button color="light"></ion-back-button>
+    </ion-buttons> 
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  
+  <h2 style="text-align: center;">Ajude a manter nosso projeto</h2>
+
+  <ion-card>
+    <ion-card-content>
+      <b>PIX</b>
+      <br>
+      --------- CHAVE PIX ---------
+    </ion-card-content>
+  </ion-card>
+ 
+  <ion-button expand="block" (click)="voltar()">Voltar</ion-button>
+  <ion-button expand="block" (click)="agradecimento('Eduardo')">Agradecimento Eduardo</ion-button>
+  <ion-button expand="block" (click)="agradecimento('Telma')">Agradecimento Telma</ion-button>
+</ion-content>

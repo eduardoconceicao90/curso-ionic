@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController } from '@ionic/angular';
+import { NavController, ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-doacao',
@@ -8,7 +8,9 @@ import { NavController } from '@ionic/angular';
 })
 export class DoacaoPage implements OnInit {
 
-  constructor(private navCtrl: NavController) { }
+  constructor(private navCtrl: NavController,
+              private toastCtrl: ToastController
+  ) { }
 
   ngOnInit() {
   }
@@ -19,5 +21,17 @@ export class DoacaoPage implements OnInit {
 
   agradecimento(nome: string){
     this.navCtrl.navigateForward('doadores/' + nome);
+  }
+
+  async fazerDoacao(){
+    localStorage.setItem('fezdoacao', 'sim');
+    
+    const toast = await this.toastCtrl.create({
+      message: 'Doação realizada com sucesso',
+      duration: 2000,
+      position: 'top',
+      color: 'dark',
+    });  
+    toast.present();
   }
 }

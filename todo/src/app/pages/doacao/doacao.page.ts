@@ -8,6 +8,8 @@ import { NavController, ToastController } from '@ionic/angular';
 })
 export class DoacaoPage implements OnInit {
 
+  loading: boolean = false;
+
   constructor(private navCtrl: NavController,
               private toastCtrl: ToastController
   ) { }
